@@ -1,0 +1,17 @@
+        body {
+                display: flex;
+                gap: 50px;
+            }
+
+        .table{
+                border-collapse: collapse;
+                border: 0.15rem solid black;
+                border-spacing: 2rem;
+                font-family: Arial;
+                font-size:medium;
+        }
+
+        td, th {
+                border: 0.10rem solid black;
+                padding: 1.5rem;
+        }
