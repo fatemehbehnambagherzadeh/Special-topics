@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>table</title>
+        <style>
+        body {
+                display: flex;
+                gap: 50px;
+            }
+
+        .table{
+                border-collapse: collapse;
+                border: 0.15rem solid black;
+                border-spacing: 2rem;
+                font-family: Arial;
+                font-size:medium;
+        }
+
+        td, th {
+                border: 0.10rem solid black;
+                padding: 1.5rem;
+        }
+        </style>
+    </head>
+    <body>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th rowspan="2">name</th>
+                        <th colspan="2">last name</th>
+                        <th rowspan="2">birthday</th>
+                    </tr>
+                    <tr>
+                        <th>last</th>
+                        <th>name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>maryam</td>
+                        <td>zim</td>
+                        <td>zim</td>
+                        <td rowspan="3">tiir</td>
+                    </tr>
+                    <tr>
+                        <td>maryam</td>
+                        <td>zim</td>
+                        <td>zim</td>
+                    </tr>
+                    <tr>
+                        <td>maryam</td>
+                        <td>zim</td>
+                        <td>zim</td>
+
+                    </tr>
+                    <tr>
+                        <td>maryam</td>
+                        <td>zim</td>
+                        <td>zim</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">maryam</td>
+                        <td>zim</td>
+                        <td>zim</td>
+                        <td>tiir</td>
+                    </tr>
+                    <tr>
+                        <td>zim</td>
+                        <td>zim</td>
+                        <td>tiir</td>
+                    </tr>
+                    <tr>
+                        <td>maryam</td>
+                        <td>zim</td>
+                        <td>zim</td>
+                        <td>tiir</td>
+                    </tr>
+                    <tr>
+                        <td>maryam</td>
+                        <td>zim</td>
+                        <td>zim</td>
+                        <td>tiir</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <th colspan="2">total</th>
+                    <td colspan="2">3000</td>
+                </tfoot>
+            </table>
+        </div>
+    </body>
+</html>
