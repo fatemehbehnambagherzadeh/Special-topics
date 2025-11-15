@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Semantic Tag Blog (Exercise)</title>
+        <style>
+            /* --- Base styles --- */
+            html {
+                font-size: 1rem; /* 1rem = 16px */
+            }
+
+            body {
+                font-family: sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                background-color: #f9f9f9;
+            }
+
+            /* --- Container --- */
+            .container {
+                max-width: 60rem;     
+                margin: 0 auto;
+                padding: 1rem;
+                border: 0.05rem solid #f0f0f0;
+                box-shadow:  0.25rem rgba(0, 0, 0, 0.012);
+            }
+
+            /* --- Header --- */
+            header {
+                background-color: #f9f9f9;
+                box-shadow: 0 0.12rem 0.25rem rgba(0, 0, 0, 0.05);
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .branding {
+                margin-bottom: 0.5rem;
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                gap: 1.12rem;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: #333;
+            }
+
+            /* --- Layout: main + sidebar --- */
+            .layout {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap; /* responsive */
+            }
+
+            main {
+                flex: 2;
+                padding: 1rem;
+                min-width: 20rem; /* تا وقتی عرض کم شد، زیر هم برن */
+                background-color: #f9f9f9;
+                box-shadow: 0 0.12rem 0.25rem rgba(0, 0, 0, 0.05);
+            }
+
+            aside {
+                flex: 1;
+                background-color: #f9f9f9;
+                box-shadow: 0 0.12rem 0.25rem rgba(0, 0, 0, 0.05);
+                padding: 1rem;
+                min-width: 15rem;
+            }
+
+             /* --- Code style --- */
+            code {
+                background: #eee;
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-family: monospace;
+            }
+
+             /* --- Articles --- */
+            article {
+                border-bottom: 0.1rem solid #ccc;
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            .post-meta {
+                font-size: 0.9rem;
+                color: #555;
+            }
+
+            /* --- Footer --- */
+            footer {
+                text-align: center;
+                background-color: #f9f9f9;
+                box-shadow: 0 0.12rem 0.25rem rgba(0, 0, 0, 0.05);
+                padding: 0.8rem;
+                margin-top: 1rem;
+                font-size: 0.9rem;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="container">
+            <!-- Header area -->
+            <header class="header">
+                <div class="branding">
+                    <h1 class="site-title">My Blog</h1>
+                    <p class="tagline">Notes on web development</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Articles</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- Main + Sidebar two-column layout -->
+            <div class="layout">
+                <!-- Main content column -->
+                <main class="main">
+                    <article class="post">
+                        <h2 class="post-title">What Are Semantic Tags?</h2>
+                        <div class="post-meta">
+                            <time class="post-date">2025-09-10</time>
+                            <p class="post-author">by Maryam</p>
+                            <!--**mikhastam az tag address estegadeh bekonam vali chon faghat nam nevisandeh npast 
+                            moordi nadareh az span estefadeh besheh vali man tag p mizaram keh semontik basheh -->
+                            <p class="post-content">
+                                <span>
+                                    Semantic tags give meaning to your
+                                    markup—for
+                                    example, using <code
+                                        class="code">header</code>
+                                    or <code class="code">article</code> instead
+                                    of
+                                    a plain container.
+                                </span>
+                            </p>
+                        </article>
+                        <article class="post">
+                            <h2 class="post-title">Why Structure Matters</h2>
+                            <div class="post-meta">
+                                <time class="post-date">2025-09-08</time>
+                                <p class="post-author">by Team</p>
+                            </div>
+                            <p class="post-content">
+                                <span>
+                                    Good structure improves accessibility, SEO,
+                                    and
+                                    collaboration.
+                                    Start by organizing content into meaningful
+                                    sections.
+                                </span>
+                            </p>
+                        </article>
+                    </main>
+                    <aside class="sidebar">
+                        <section class="widget">
+                            <h3 class="widget-title">Categories</h3>
+                            <ul class="widget-content">
+                                <li class="chip">HTML</li>
+                                <li class="chip">CSS</li>
+                                <li class="chip">JavaScript</li>
+                            </ul>
+                        </section>
+                        <section class="widget">
+                            <h3 class="widget-title">Featured</h3>
+                            <div class="widget-content">
+                                <p>Building accessible forms</p>
+                            </div>
+                        </section>
+                    </aside>
+                </div>
+                <!-- Footer area -->
+                <footer class="footer">
+                    <p>© 2025 My Blog</p>
+                </footer>
+            </section>
+        </body>
+    </html>
