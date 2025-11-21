@@ -1,0 +1,157 @@
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('../font/RobotoMono-Regular.ttf') format('truetype');
+}
+
+:root {
+  --bg: #ff8a66;
+  --card: #fff;
+  --tray: #fefefe;
+  --ticket: #f9f9f9;
+  --card-width: 328px;
+  --width: 200px;
+  --height: 256px;
+  --r: 12px;
+  --gap: 0;
+  --anim: 6s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto Mono';
+  background: var(--bg);
+}
+
+.ticket-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--card-width);
+  background: var(--card);
+  padding: 40px 40px 0;
+  border-radius: var(--r);
+  text-align: center;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, .18);
+}
+
+.ticket-card h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ticket-card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 32px;
+}
+
+.ticket-card mark {
+  background: #ffea52;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.ticket-tray {
+  width: var(--width);
+  height: var(--height);
+  margin-top: 144px;
+  background: var(--card);
+  border-top: 8px solid #111;
+  border-radius: var(--r);
+  overflow: hidden;
+  position: relative;
+}
+
+.scroller {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  gap: var(--gap);
+}
+
+.ticket-item {
+  width: var(--width);
+  height: var(--height);
+  background: var(--ticket);
+  border-radius: var(--r);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 2px dashed #bbb;
+
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--tray);
+  }
+
+  &::before {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  .midline {
+    width: 65%;
+    height: 2px;
+    background: #999;
+    border-radius: 2px;
+  }
+
+  &:nth-child(1) {
+    animation: ticketScroll var(--anim) linear infinite;
+  }
+
+  &:nth-child(2) {
+    animation: ticketScroll var(--anim) linear infinite;
+    animation-delay: calc(var(--anim) / 2);
+  }
+}
+
+@keyframes ticketScroll {
+
+  0% {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+}
